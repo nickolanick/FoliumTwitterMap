@@ -26,8 +26,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -499,8 +499,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
           <folding />
         </state>
       </provider>
