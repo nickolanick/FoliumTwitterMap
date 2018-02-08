@@ -12,8 +12,9 @@ def inp_data():
     Then calls of of the modules and creates a Map With all Films
     you asked
     """
-    data_lim = input("Enter positive integer > then 5: ")
     year = input("Enter the year of films : ")
+    data_lim = input("Enter the number of films to see  positive integer > then 5: ")
+
     try:
 
         data_lim = int(data_lim)
