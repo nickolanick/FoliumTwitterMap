@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7a4f5b65-6d06-4b9b-bfa9-075111f83989" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/callmodule.py" afterPath="$PROJECT_DIR$/callmodule.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser.py" afterPath="$PROJECT_DIR$/parser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/placement.py" afterPath="$PROJECT_DIR$/placement.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +23,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="world.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jsonfiles/world.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-31429">
+              <caret line="0" column="1741" lean-forward="false" selection-start-line="0" selection-start-column="1741" selection-end-line="0" selection-end-column="1741" />
               <folding />
             </state>
           </provider>
@@ -58,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="locathion_finder.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="locathion_finder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/locathion_finder.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -134,6 +141,7 @@
         <option value="$PROJECT_DIR$/parser.py" />
         <option value="$PROJECT_DIR$/callmodule.py" />
         <option value="$PROJECT_DIR$/placement.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -409,14 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jsonfiles/world.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="0" column="1741" lean-forward="false" selection-start-line="0" selection-start-column="1741" selection-end-line="0" selection-end-column="1741" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -453,14 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-229">
@@ -471,14 +463,6 @@
       <provider editor-type-id="LargeFileEditor">
         <state relative-caret-position="-124035">
           <caret line="718" column="1247437" lean-forward="false" selection-start-line="718" selection-start-column="1247437" selection-end-line="718" selection-end-column="1247437" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -493,6 +477,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonfiles/world.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31429">
+          <caret line="0" column="1741" lean-forward="false" selection-start-line="0" selection-start-column="1741" selection-end-line="0" selection-end-column="1741" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
