@@ -1,3 +1,4 @@
+from collections import defaultdict
 def read_file(path,year):
     """
     (file) -- > dict
@@ -6,7 +7,7 @@ def read_file(path,year):
     reads file and return dictionary with film name as
     a key and locations of this film as a value
     """
-    dic_all_films = dict()
+    dic_all_films = defaultdict(set)
     with open(path, 'r', encoding='utf-8', errors="ignore") as file_to_read:
         line = file_to_read.readline()
         while line != "==============\n":
