@@ -1,5 +1,7 @@
 from collections import defaultdict
-def read_file(path,year):
+
+
+def read_file(path, year):
     """
     (file) -- > dict
 
@@ -40,4 +42,3 @@ def read_file(path,year):
             except UnicodeEncodeError:
                 continue
         return dic_all_films
-

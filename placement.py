@@ -23,20 +23,28 @@ def layer_placement(dict_locations):
         full_value = ""
         for location in range(len(value)):
             value[location] = debugstr(value[location])
-            full_value += "{}) <a href=\"#\">{}</a><br>".format(str(location+1),value[location])  #str(location + 1) + ") " + "<a href=\"#\">"+value[location]+"<\a>" + "<br>"
+            full_value += "{}) <a href=\"#\">{}</a><br>" \
+                .format(str(location + 1), value[location])
         latitude, longtitude = key
-        fg.add_child(folium.Marker(location=[latitude,
-                                             longtitude],
-                                   popup="<small>All films on this location<br><bold>{}"
-                                         "</bold></small>".format(
-                                       full_value),
-                                   icon=folium.Icon(color=('#%06X' % random.randint(0, 256 ** 3 - 1)),
-                                                    icon_color=('#%06X' % random.randint(0, 256 ** 3 - 1)))))
+        fg.add_child(folium.Marker
+                     (location=
+                      [latitude,
+                       longtitude],
+                      popup="<small>All films on this location<br><bold>{}"
+                            "</bold></small>".format(
+                          full_value),
+                      icon=folium.Icon(
+                          color=('#%06X' % random.randint(0, 256 ** 3 - 1)),
+                          icon_color=
+                          ('#%06X' % random.randint(0, 256 ** 3 - 1)))))
     pp_fg.add_child(folium.GeoJson(open('jsonfiles/world.json', 'r',
                                         encoding=
-                                        'utf-8-sig').read(), lambda x: {'fillColor': 'yellow'
-    if x['properties']['POP2005'] < 10000000 else 'blue'
-    if x['properties']['POP2005'] < 20000000 else 'red'}))
+                                        'utf-8-sig').read(),
+                                   lambda x: {'fillColor': 'yellow'
+                                   if x['properties']['POP2005'] <
+                                      10000000 else 'blue'
+                                   if x['properties']['POP2005'] <
+                                      20000000 else 'red'}))
     map_films.add_child(fg)
     map_films.add_child(fg_p)
     map_films.add_child(pp_fg)
@@ -65,7 +73,7 @@ def map_placement(dict_map, limit_data):
         if bool_exit:
             break
         for location in value:
-            print("[{}:{}]".format(count,limit_data))
+            print("[{}:{}]".format(count, limit_data))
             if count >= limit_data:
                 bool_exit = True
                 break
