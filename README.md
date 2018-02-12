@@ -11,7 +11,9 @@ It has 4 layers
 <li>THe UKRAINE </li>
 
 </ol></p>
+
 <hr>
+<p>You Can also click on the film to see more about it</p>
 <ul>
 	<li>callmodule.py - модуль запсуку програми , всі інші модулі виклакаютсья у ньому</li>
 	<li>parser.py - модуль для зчитування даних з файлу</li>
