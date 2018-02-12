@@ -17,10 +17,7 @@ def read_file(path, year):
         for i in str(file_to_read.read()).split("\n"):
             line_split = i.split("\t")
             if "(" + str(year) in line_split[0]:
-                if "{" in line_split[0]:
-                    line_normal = i[0:i.index("{")]
-                else:
-                    line_normal = line_split[0]
+                line_normal = line_split[0]
 
                 if "(" in line_split[-1]:
                     index_call = -2
