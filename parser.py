@@ -11,7 +11,7 @@ def read_file(path, year):
     """
     dic_all_films = defaultdict(set)
     with open(path, 'r', encoding='utf-8', errors="ignore") as file_to_read:
-        line = file_to_read.readline()
+        line = file_to_read.readline().strip()
         while line != "==============\n":
             line = file_to_read.readline()
         for i in str(file_to_read.read()).split("\n"):
