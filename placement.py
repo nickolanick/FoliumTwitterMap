@@ -1,5 +1,6 @@
 import folium
 
+
 def debugstr(element):
     """
     Find the " ' in the str and replaces them
@@ -12,7 +13,7 @@ def debugstr(element):
     return element
 
 
-def read_location_file(path, dict_it,break_line):
+def read_location_file(path, dict_it, break_line):
     """
     (str,dict,int) ->None
 
@@ -45,41 +46,49 @@ def read_location_file(path, dict_it,break_line):
                         full_value = ""
                         for location in value:
                             location = debugstr(location)
-                            full_value += "{}) <a href=\"https://www.google.com.ua/search?q={}\">{}</a><br>" \
-                                .format(count_films,location,location)
+                            full_value += \
+                                "{}) <a href=\"https://www.google." \
+                                "com.ua/search?q={}\">{}" \
+                                "</a><br>" \
+                                "".format(count_films, location, location)
                             count_films += 1
                         count_films = 1
                         count += 1
-                        print("[{}:{}]".format(count,break_line))
+                        print("[{}:{}]".format(count, break_line))
                         if len(value) > 1:
                             icon_url = 'files/img.png'
                             size = (40, 50)
                             iconn = folium.features.CustomIcon(icon_url,
                                                                icon_size=size)
-                            fpp.add_child(folium.Marker
-                                          (location=[float(line.split("\t")[1]), float(line.split("\t")[2])],
-                                           icon=iconn,
-                                           popup="<small>All films on this location<br><bold>{}"
-                                                 "</bold></small>".format(
-                                               full_value)))
+                            fpp.add_child(
+                                folium.Marker
+                                (location=[float(line.split("\t")[1]),
+                                           float(line.split("\t")[2])],
+                                 icon=iconn,
+                                 popup="<small>All films"
+                                       " on this location<br><bold>{}"
+                                       "</bold></small>".format(
+                                     full_value)))
                         else:
                             size = (40, 40)
                             icon_url = 'files/camera.png'
                             iconn = folium.features.CustomIcon(icon_url,
                                                                icon_size=size)
-                            fg.add_child(folium.Marker
-                                         (location=[float(line.split("\t")[1]), float(line.split("\t")[2])],
-                                          icon=iconn,
-                                          popup="<small>All films on this location<br><bold>{}"
-                                                "</bold></small>".format(
-                                              full_value)))
+                            fg.add_child(
+                                folium.Marker(
+                                    location=[float(line.split("\t")[1]),
+                                              float(line.split("\t")[2])],
+                                    icon=iconn,
+                                    popup="<small>All films on this"
+                                          " location<br><bold>{}"
+                                          "</bold></small>".format(
+                                        full_value)))
             except UnicodeEncodeError:
                 continue
             except ValueError:
                 continue
     pp_fg.add_child(folium.GeoJson(open('jsonfiles/world.json', 'r',
-                                        encoding=
-                                        'utf-8-sig').read(),
+                                        encoding='utf-8-sig').read(),
                                    lambda x: {'fillColor': 'yellow'
                                    if x['properties']['POP2005'] <
                                       10000000 else 'blue'
