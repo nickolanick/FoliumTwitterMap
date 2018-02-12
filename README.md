@@ -2,6 +2,7 @@
 <h1>Foluim Film Map</h1>
 <p>The Program analysis the locations.list file and puts on the map information about this data (created with folium module) </br>
 It has 4 layers
+<h3>All Locations where found with geopy API</h3>
 <hr>
 <ol>
 <li>Creates the markers of not popular spots with the img of "Film"</li>
