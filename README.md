@@ -17,6 +17,6 @@ It has 4 layers
 	<li>placement.py - мoдуль котрий розставляє всі мітки стоворюж мапу та додає шари</li>
 </ul>
 <hr>
-<img src="https://github.com/nickolanick/lab_1_map/Screens/Screen Shot 1"></img>
-<img src="https://github.com/nickolanick/lab_1_map/Screens/Screen Shot 2"></img>
-<img src="https://github.com/nickolanick/lab_1_map/Screens/Screen Shot 3"></img>
+<img src="https://github.com/nickolanick/lab_1_map/blob/master/Screens/Screen%20Shot%201.png"></img>
+<img src="https://github.com/nickolanick/lab_1_map/blob/master/Screens/Screen%20Shot%202.png"></img>
+<img src="https://github.com/nickolanick/lab_1_map/blob/master/Screens/Screen%20Shot%203.png"></img>
