@@ -1,5 +1,5 @@
 from parser import read_file
-from placement import layer_placement, map_placement
+from placement import read_location_file
 
 
 def inp_data():
@@ -27,7 +27,8 @@ def inp_data():
     except AssertionError:
         print("Limit must be an positive integer > then 5")
         exit()
-    layer_placement(map_placement(read_file("locations.list", year), data_lim))
+
+    read_location_file("locations.tsv", read_file("locations.list", year), data_lim)
 
 
 inp_data()

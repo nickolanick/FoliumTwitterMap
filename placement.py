@@ -1,56 +1,4 @@
 import folium
-import random
-from locathion_finder import find_location
-
-
-def layer_placement(dict_locations):
-    """
-    dict() --> None
-    Puts all three layers the Markers Population And UKRAINE!
-    the population is 3 colors (depends on the amount of people)
-
-    """
-    map_films = folium.Map()
-    pp_fg = folium.FeatureGroup(name='Population')
-    fg = folium.FeatureGroup(name="Markers")
-    fg_p = folium.FeatureGroup(name="UkraineBorders")
-
-    fg_p.add_child(
-        folium.GeoJson(data=open('jsonfiles/UKR.geo.json', 'r',
-                                 encoding="utf-8").read(), ))
-    for key, value in dict_locations.items():
-
-        full_value = ""
-        for location in range(len(value)):
-            value[location] = debugstr(value[location])
-            full_value += "{}) <a href=\"#\">{}</a><br>" \
-                .format(str(location + 1), value[location])
-        latitude, longtitude = key
-        fg.add_child(folium.Marker
-                     (location=
-                      [latitude,
-                       longtitude],
-                      popup="<small>All films on this location<br><bold>{}"
-                            "</bold></small>".format(
-                          full_value),
-                      icon=folium.Icon(
-                          color=('#%06X' % random.randint(0, 256 ** 3 - 1)),
-                          icon_color=
-                          ('#%06X' % random.randint(0, 256 ** 3 - 1)))))
-    pp_fg.add_child(folium.GeoJson(open('jsonfiles/world.json', 'r',
-                                        encoding=
-                                        'utf-8-sig').read(),
-                                   lambda x: {'fillColor': 'yellow'
-                                   if x['properties']['POP2005'] <
-                                      10000000 else 'blue'
-                                   if x['properties']['POP2005'] <
-                                      20000000 else 'red'}))
-    map_films.add_child(fg)
-    map_films.add_child(fg_p)
-    map_films.add_child(pp_fg)
-    map_films.add_child(folium.LayerControl())
-    map_films.save("new.html")
-
 
 def debugstr(element):
     """
@@ -64,31 +12,85 @@ def debugstr(element):
     return element
 
 
-def map_placement(dict_map, limit_data):
-    count = 0
-    dict_final = dict()
-    bool_exit = False
+def read_location_file(path, dict_it,break_line):
+    """
+    (str,dict,int) ->None
 
-    for key, value in dict_map.items():
-        if bool_exit:
-            break
-        for location in value:
-            print("[{}:{}]".format(count, limit_data))
-            if count >= limit_data:
-                bool_exit = True
+    Creates map and puts all of the layers and pointers
+    the pointer with "fim" is for those marks with 1 film
+    and the "oscar" mark is for more popular spots
+    """
+    map_films = folium.Map()
+    pp_fg = folium.FeatureGroup(name='Population')
+    fg = folium.FeatureGroup(name="Regular spots")
+    fpp = folium.FeatureGroup(name="Popular spots")
+    fg_p = folium.FeatureGroup(name="UkraineBorders")
+
+    fg_p.add_child(
+        folium.GeoJson(data=open('jsonfiles/UKR.geo.json', 'r',
+                                 encoding="utf-8").read(), ))
+    with open(path, 'r', encoding="utf-8", errors="ignore") as file_films:
+        file_films.readline()
+        line = file_films.readline()
+        count = 0
+        count_films = 1
+
+        while line:
+            if count == break_line:
                 break
-            count += 1
             try:
-                try:
-                    latitude, longitude = find_location(location)
-                except IndexError:
-                    continue
-
-                if dict_final.get((latitude, longitude), False):
-                    dict_final[(latitude, longitude)].append(key)
-                else:
-                    dict_final[(latitude, longitude)] = [key]
-
-            except AttributeError:
+                line = file_films.readline()
+                for key, value in dict_it.items():
+                    if key == line.split("\t")[0]:
+                        full_value = ""
+                        for location in value:
+                            location = debugstr(location)
+                            full_value += "{}) <a href=\"https://www.google.com.ua/search?q={}\">{}</a><br>" \
+                                .format(count_films,location,location)
+                            count_films += 1
+                        count_films = 1
+                        count += 1
+                        print("[{}:{}]".format(count,break_line))
+                        if len(value) > 1:
+                            icon_url = 'img.png'
+                            size = (40, 50)
+                            iconn = folium.features.CustomIcon(icon_url,
+                                                               icon_size=size)
+                            fpp.add_child(folium.Marker
+                                          (location=[float(line.split("\t")[1]), float(line.split("\t")[2])],
+                                           icon=iconn,
+                                           popup="<small>All films on this location<br><bold>{}"
+                                                 "</bold></small>".format(
+                                               full_value)))
+                        else:
+                            size = (40, 40)
+                            icon_url = 'camera.png'
+                            iconn = folium.features.CustomIcon(icon_url,
+                                                               icon_size=size)
+                            fg.add_child(folium.Marker
+                                         (location=[float(line.split("\t")[1]), float(line.split("\t")[2])],
+                                          icon=iconn,
+                                          popup="<small>All films on this location<br><bold>{}"
+                                                "</bold></small>".format(
+                                              full_value)))
+            except UnicodeEncodeError:
                 continue
-    return dict_final
+            except ValueError:
+                continue
+    pp_fg.add_child(folium.GeoJson(open('jsonfiles/world.json', 'r',
+                                        encoding=
+                                        'utf-8-sig').read(),
+                                   lambda x: {'fillColor': 'yellow'
+                                   if x['properties']['POP2005'] <
+                                      10000000 else 'blue'
+                                   if x['properties']['POP2005'] <
+                                      20000000 else 'red'}))
+    fg_p.add_child(
+        folium.GeoJson(data=open('jsonfiles/UKR.geo.json', 'r',
+                                 encoding="utf-8").read(), ))
+    map_films.add_child(fpp)
+    map_films.add_child(fg_p)
+    map_films.add_child(fg)
+    map_films.add_child(pp_fg)
+    map_films.add_child(folium.LayerControl())
+    map_films.save("TRYY.html")
