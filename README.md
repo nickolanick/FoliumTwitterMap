@@ -2,6 +2,7 @@
 <h1>Foluim Film Map</h1>
 <p>The Program analysis the locations.list file and puts on the map information about this data (created with folium module) </br>
 It has 4 layers
+<hr>
 <ol>
 <li>Creates the markers of not popular spots with the img of "Film"</li>
 <li>Creates popular spots marks with 2 or > films and the with the "oscar icon"</li>
@@ -16,3 +17,6 @@ It has 4 layers
 	<li>placement.py - мoдуль котрий розставляє всі мітки стоворюж мапу та додає шари</li>
 </ul>
 <hr>
+<img src="https://github.com/nickolanick/lab_1_map/Screens/Screen Shot 1"></img>
+<img src="https://github.com/nickolanick/lab_1_map/Screens/Screen Shot 2"></img>
+<img src="https://github.com/nickolanick/lab_1_map/Screens/Screen Shot 3"></img>

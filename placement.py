@@ -93,4 +93,4 @@ def read_location_file(path, dict_it,break_line):
     map_films.add_child(fg)
     map_films.add_child(pp_fg)
     map_films.add_child(folium.LayerControl())
-    map_films.save("TRYY.html")
+    map_films.save("mapOfFilma.html")
