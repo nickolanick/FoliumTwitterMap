@@ -28,7 +28,7 @@ def inp_data():
         print("Limit must be an positive integer > then 5")
         exit()
 
-    read_location_file("locations.tsv", read_file("locations.list", year), data_lim)
+    read_location_file("files/locations.tsv", read_file("files/locations.list", year), data_lim)
 
 
 inp_data()

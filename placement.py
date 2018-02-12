@@ -52,7 +52,7 @@ def read_location_file(path, dict_it,break_line):
                         count += 1
                         print("[{}:{}]".format(count,break_line))
                         if len(value) > 1:
-                            icon_url = 'img.png'
+                            icon_url = 'files/img.png'
                             size = (40, 50)
                             iconn = folium.features.CustomIcon(icon_url,
                                                                icon_size=size)
@@ -64,7 +64,7 @@ def read_location_file(path, dict_it,break_line):
                                                full_value)))
                         else:
                             size = (40, 40)
-                            icon_url = 'camera.png'
+                            icon_url = 'files/camera.png'
                             iconn = folium.features.CustomIcon(icon_url,
                                                                icon_size=size)
                             fg.add_child(folium.Marker
